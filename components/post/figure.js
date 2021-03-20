@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import { useContext, createContext } from "react";
+import { useContext, createContext, useState } from "react";
 
 const FigureContext = createContext({
   width: null,
@@ -7,12 +7,17 @@ const FigureContext = createContext({
 });
 
 const Figure = ({ desc, href, children, wide, height, width }) => {
+  const [isZoomed, setZoomed] = useState(false);
+  const handleClick = () => {
+    setZoomed(!isZoomed);
+  };
+
   const content =
     width && height ? (
       <div
         style={{
           position: "relative",
-          display: "inline-block",
+          display: "block",
           maxWidth: "100%",
           overflow: "hidden",
         }}
@@ -43,32 +48,67 @@ const Figure = ({ desc, href, children, wide, height, width }) => {
       children
     );
 
-  return (
+  return isZoomed ? (
+    <div className="fullscreen">
+      <div onClick={handleClick} className="backdrop">
+        {content}
+      </div>
+      <style jsx>{`
+        div {
+          text-align: center;
+        }
+        .fullscreen {
+          position: fixed;
+          z-index: 100;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          cursor: zoom-out;
+        }
+        .backdrop {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          background: #000000cc;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+      `}</style>
+    </div>
+  ) : (
     <div className={wide && "wide"}>
       {href ? (
         <a href={href} target="_blank">
           {content}
         </a>
       ) : (
-        content
+        <div onClick={handleClick} className="zoomable">
+          {content}
+        </div>
       )}
-      {desc && <p>{desc}</p>}
+      {desc && <p className="desc">{desc}</p>}
       <style jsx>{`
         div {
           text-align: center;
         }
-        p {
+        .zoomable {
+          cursor: zoom-in;
+        }
+        p.desc {
           font-size: 13px;
           color: #999;
           text-align: center;
           display: block;
           margin-top: 10px;
         }
-        p > :global(a) {
+        p.desc > :global(a) {
           color: #666;
         }
         .wide {
-          background: #f2f2f2;
           position: relative;
         }
         .wide::before {

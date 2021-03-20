@@ -9,7 +9,7 @@ import "nprogress";
 
 const Main = ({ children, headerActive }) => {
   return (
-    <main>
+    <main style={{ overflow: "hidden" }}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Guillermo Rauch's blog</title>
