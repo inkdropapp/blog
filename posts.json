@@ -1,6 +1,11 @@
 {
   "posts": [
     {
+      "id": "how-i-thrived-as-an-introverted-developer",
+      "date": "March 10, 2021",
+      "title": "How I thrived as an introverted developer"
+    },
+    {
       "id": "next-for-vercel",
       "date": "December 16, 2020",
       "title": "Next for Vercel"
