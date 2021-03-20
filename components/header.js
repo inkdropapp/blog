@@ -17,7 +17,7 @@ const Header = () => (
       >
         Source
       </a>
-      <a className="follow" target="_blank" href="https://twitter.com/rauchg">
+      <a className="follow" target="_blank" href="https://twitter.com/inkdrop_app">
         Follow Me
       </a>
     </nav>
