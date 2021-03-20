@@ -9,6 +9,7 @@ export default function Tweet({ id, br, caption }) {
 
   // Happens when `getStaticProps` is traversing the tree to collect the tweet ids
   if (tweet.ignore) return null;
+  if (!tweet.ast) return null;
 
   return (
     <main className={twitterTheme.theme}>
