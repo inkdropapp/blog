@@ -34,18 +34,18 @@ const Header = ({
         <span className="meta">
           <a
             className="author"
-            href="https://twitter.com/rauchg"
+            href="https://twitter.com/inkdrop_app"
             target="_blank"
           >
             <span className="img">
               <NextImage
-                src="/images/rauchg.png"
+                src="/images/takuya.jpg"
                 width={25}
                 height={25}
                 layout="fixed"
               />
             </span>
-            rauchg
+            Takuya Matsuyama
           </a>
 
           {isMounted ? (
@@ -100,6 +100,7 @@ const Header = ({
           justify-content: space-between;
           font-size: 14px;
           color: var(--meta-text-color);
+          margin-bottom: 1rem;
         }
 
         nav a {

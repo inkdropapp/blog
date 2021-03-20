@@ -10,7 +10,11 @@ const Header = () => (
     </Link>
 
     <nav>
-      <a className="src" target="_blank" href="https://github.com/rauchg/blog">
+      <a
+        className="src"
+        target="_blank"
+        href="https://github.com/inkdropapp/blog"
+      >
         Source
       </a>
       <a className="follow" target="_blank" href="https://twitter.com/rauchg">
