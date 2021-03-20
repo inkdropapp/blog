@@ -1,4 +1,4 @@
-const H = ({ id, level = 2, fontSize = 20, children }) => (
+const H = ({ id, level = 2, fontSize = 24, children }) => (
   <div id={id}>
     {React.createElement(
       `h${level}`,
@@ -18,7 +18,7 @@ const H = ({ id, level = 2, fontSize = 20, children }) => (
 
       span {
         position: absolute;
-        margin-left: -15px;
+        margin-left: -20px;
         width: 15px;
       }
 
@@ -31,7 +31,7 @@ const H = ({ id, level = 2, fontSize = 20, children }) => (
 );
 
 const H2 = H;
-const H3 = props => H({ ...props, level: 3, fontSize: 18 });
+const H3 = props => H({ ...props, level: 3, fontSize: 20 });
 
 export default H2;
 export { H2, H3 };
