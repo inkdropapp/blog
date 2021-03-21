@@ -12,7 +12,7 @@ const Main = ({ children, headerActive }) => {
     <main style={{ overflow: "hidden" }}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Guillermo Rauch's blog</title>
+        <title>Dev as Life - Blog</title>
       </Head>
 
       <style jsx global>
@@ -36,7 +36,7 @@ const Main = ({ children, headerActive }) => {
         main {
           padding: 10px;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
           padding: 20px;
         }
       `}</style>

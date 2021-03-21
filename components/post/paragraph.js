@@ -5,6 +5,8 @@ const Paragraph = ({ children }) => (
       p {
         margin: 20px 0;
         line-height: 1.5;
+        text-align: justify;
+        text-indent: 1ex;
       }
     `}</style>
   </p>

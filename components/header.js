@@ -3,30 +3,37 @@ import Link from "next/link";
 
 const Header = () => (
   <header>
-    <Link href="/">
-      <a className="logo" href="/">
-        <Logo />
-      </a>
-    </Link>
+    <div className='container'>
+      <Link href="/">
+        <a className="logo" href="/">
+          <Logo />
+        </a>
+      </Link>
 
-    <nav>
-      <a
-        className="src"
-        target="_blank"
-        href="https://github.com/inkdropapp/blog"
-      >
-        Source
-      </a>
-      <a className="follow" target="_blank" href="https://twitter.com/inkdrop_app">
-        Follow Me
-      </a>
-    </nav>
+      <nav>
+        <a
+          className="src"
+          target="_blank"
+          href="https://github.com/inkdropapp/blog"
+        >
+          Source
+        </a>
+        <a className="follow" target="_blank" href="https://twitter.com/inkdrop_app">
+          Follow Me
+        </a>
+      </nav>
+    </div>
 
     <style jsx>{`
       header {
+        border-bottom: 1px dashed rgba(66,71,112,0.09);
+      }
+
+      .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-left: 1px dashed rgba(66,71,112,0.09);
       }
 
       nav {
@@ -71,8 +78,8 @@ const Header = () => (
       }
 
       @media (min-width: 500px) {
-        header {
-          max-width: 42rem;
+        .container {
+          max-width: 46rem;
           margin: auto;
           padding: 10px 0;
         }

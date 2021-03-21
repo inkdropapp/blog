@@ -86,7 +86,7 @@ const Figure = ({ desc, href, children, wide, height, width }) => {
           {content}
         </a>
       ) : (
-        <div onClick={handleClick} className="zoomable">
+        <div onClick={handleClick} className="zoomable content">
           {content}
         </div>
       )}
@@ -97,6 +97,10 @@ const Figure = ({ desc, href, children, wide, height, width }) => {
         }
         .zoomable {
           cursor: zoom-in;
+        }
+        .content {
+          margin-left: -15px;
+          margin-right: -15px;
         }
         p.desc {
           font-size: 13px;
@@ -119,6 +123,8 @@ const Figure = ({ desc, href, children, wide, height, width }) => {
           position: absolute;
           background: #f2f2f2;
           z-index: -1;
+          border-top: 1px dashed rgba(66,71,112,0.09);
+          border-bottom: 1px dashed rgba(66,71,112,0.09);
         }
       `}</style>
     </div>

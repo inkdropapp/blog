@@ -2,29 +2,30 @@ const H = ({ id, level = 2, fontSize = 24, children }) => (
   <div id={id}>
     {React.createElement(
       `h${level}`,
-      { style: { fontWeight: 500, fontSize } },
+      { style: { fontWeight: 700, fontSize } },
       <span>
-        <a href={`#${id}`}>#</a>
+        <a href={`#${id}`}>{'#'.repeat(level-1)}</a>
       </span>,
       children
     )}
 
     <style jsx>{`
       div {
-        margin: 50px 0 25px;
+        margin: 50px 0 25px -15px;
+        padding-left: 10px;
         font-family: Helvetica Neue, Helvetica, Arial, "Lucida Grande",
           sans-serif;
       }
 
       span {
-        position: absolute;
-        margin-left: -20px;
+        margin-right: 6px;
         width: 15px;
+        user-select: none;
       }
 
       a {
         text-decoration: none;
-        color: #999;
+        color: #00000044;
       }
     `}</style>
   </div>

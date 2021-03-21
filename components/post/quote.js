@@ -13,8 +13,9 @@ const Quote = ({ by, children }) => (
         margin: 30px 0;
         color: #666;
         font-style: oblique;
-        border-left: 8px solid #ccc;
+        border-left: 1px solid black;
         padding-left: 20px;
+        margin-left: -16px;
       }
 
       p {
