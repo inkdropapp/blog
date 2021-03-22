@@ -123,8 +123,8 @@ const Figure = ({ desc, href, children, wide, height, width }) => {
           position: absolute;
           background: #f2f2f2;
           z-index: -1;
-          border-top: 1px dashed rgba(66,71,112,0.09);
-          border-bottom: 1px dashed rgba(66,71,112,0.09);
+          border-top: 1px dashed rgba(66, 71, 112, 0.09);
+          border-bottom: 1px dashed rgba(66, 71, 112, 0.09);
         }
       `}</style>
     </div>

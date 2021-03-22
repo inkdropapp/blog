@@ -4,7 +4,7 @@ const H = ({ id, level = 2, fontSize = 24, children }) => (
       `h${level}`,
       { style: { fontWeight: 700, fontSize } },
       <span>
-        <a href={`#${id}`}>{'#'.repeat(level-1)}</a>
+        <a href={`#${id}`}>{"#".repeat(level - 1)}</a>
       </span>,
       children
     )}
@@ -17,13 +17,18 @@ const H = ({ id, level = 2, fontSize = 24, children }) => (
           sans-serif;
       }
 
+      :global(h2, h3) {
+        font-family: var(--roundFontFamily);
+        font-weight: bold;
+      }
+
       span {
         margin-right: 6px;
         width: 15px;
         user-select: none;
       }
 
-      a {
+      a[href] {
         text-decoration: none;
         color: #00000044;
       }

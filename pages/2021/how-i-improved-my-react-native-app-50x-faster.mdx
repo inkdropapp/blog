@@ -1,6 +1,6 @@
 ---
 title: How I improved my React Native app 50x faster
-description: 
+description:
 og: https://res.cloudinary.com/practicaldev/image/fetch/s--UesyZ3KP--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4bk0940h0x8739hs8wji.jpg
 date: February 26, 2021
 ---
@@ -25,12 +25,12 @@ In this article, I'd like to share what I've done to significantly improve my Re
 
 ## TL;DR
 
-* React Native is not as fast as NodeJS
-* Do not use JavaScript-based polyfills if you need performance
-* React Native can't handle binary string with NULL characters
-* I replaced the polyfills with native modules
-* Wrote JSI native modules in C++
-* Should I adopt React Native for my new project? - Yes.
+- React Native is not as fast as NodeJS
+- Do not use JavaScript-based polyfills if you need performance
+- React Native can't handle binary string with NULL characters
+- I replaced the polyfills with native modules
+- Wrote JSI native modules in C++
+- Should I adopt React Native for my new project? - Yes.
 
 ## React Native is not as fast as NodeJS
 
@@ -49,10 +49,10 @@ To accomplish those tasks, you have to use JavaScript libraries like [spark-md5]
 If you need `crypto` module, you have to install [rn-nodeify](https://github.com/tradle/rn-nodeify) and a bunch of polyfill libraries, which eventually messes up your project and makes it hard to maintain.
 So, implementing the end-to-end encryption in React Native has been a big challenge for me.
 
-Even worse, they are *very slow* because every polyfill is written in JavaScript.
+Even worse, they are _very slow_ because every polyfill is written in JavaScript.
 After barely getting them to work on my project, I got a critical bug report from a user:
 
-* [2 images (1920x1080) not loading on Android - Support - Inkdrop Forum](https://forum.inkdrop.app/t/2-images-1920x1080-not-loading-on-android/1898)
+- [2 images (1920x1080) not loading on Android - Support - Inkdrop Forum](https://forum.inkdrop.app/t/2-images-1920x1080-not-loading-on-android/1898)
 
 The app can't load images because encrypting/decrypting data on the client is too slow, which means that relying on JS-based libraries for dealing with binary data is a bad mistake.
 So, I ended up implementing those tasks in native languages.
@@ -62,7 +62,7 @@ So, I ended up implementing those tasks in native languages.
 [React Native allows you to make native modules](https://reactnative.dev/docs/native-modules-intro) so that you can use platform-specific APIs or reuse some existing libraries in Objective-C, Swift, Java, Kotlin, and C++.
 Even with native code, it is still not that simple to deal with binary data because of this annoying issue:
 
-* [Binary strings with NULL character are not handled properly](https://github.com/facebook/react-native/issues/24129)
+- [Binary strings with NULL character are not handled properly](https://github.com/facebook/react-native/issues/24129)
 
 That's because JSC always handles strings as UTF-8 terminating with NULL.
 I don't know why there wasn't an issue in the old version of RN though.
@@ -71,13 +71,13 @@ This issue forces me to [escape `\0` characters](https://github.com/craftzdog/re
 
 ```js
 function escapeBlob(data) {
-  if (typeof data === 'string') {
+  if (typeof data === "string") {
     return data
-      .replace(/\u0002/g, '\u0002\u0002')
-      .replace(/\u0001/g, '\u0001\u0002')
-      .replace(/\u0000/g, '\u0001\u0001')
+      .replace(/\u0002/g, "\u0002\u0002")
+      .replace(/\u0001/g, "\u0001\u0002")
+      .replace(/\u0000/g, "\u0001\u0001");
   } else {
-    return data
+    return data;
   }
 }
 ```
@@ -105,7 +105,9 @@ It works pretty well.
 
 ### Inter-communication between native modules
 
-![Loading image in WebView](https://cdn-images-1.medium.com/max/1600/1*Ydz6PTEAC5Ji20A-pJDkZQ.jpeg)
+<Figure desc="Loading image in WebView" width={1600} height={768}>
+  <Image src="/images/how-i-improved-my-react-native-app-50x-faster/loading-image-in-webview.jpg" />
+</Figure>
 
 Since my app is a Markdown note-taking app, images have to be rendered in a WebView. I wrote an app-specific native code in Java and Objective-C to read an image file and pass it to the WebView directly because passing a base64-encoded image data from JS to WebView through the React Native bridge is redundant and slow.
 To accomplish that, I dug into the RN core modules written in Java and Objective-C, and found how to get the existing RN view instance and control it from another native module via `RCTBridge` on iOS:
@@ -169,7 +171,9 @@ const YourComponent = (props) => {
 
 Read [my post for more detail](https://dev.to/craftzdog/how-to-control-the-existing-react-native-view-instance-from-another-native-module-3doi).
 
-![rn.gif](https://cdn-images-1.medium.com/max/1600/1*qrEdHE6lF5NJ8qAx4ZLlQA.gif)
+<Figure desc="Demo" width={800} height={450}>
+  <Image src="/images/how-i-improved-my-react-native-app-50x-faster/demo.gif" />
+</Figure>
 
 By loading directly from the filesystem to WebView without the RN bridge, the app can show an image instantly.
 
@@ -219,10 +223,10 @@ return o;
 It was hard to learn how to use JSI because there is no official comprehensive documentation and there are quite a few native modules using JSI yet.
 You can check my JSI native modules as examples:
 
-* [react-native-quick-md5](https://github.com/craftzdog/react-native-quick-md5)
-  * 10x faster on iOS and 8x faster on Android
-* [react-native-quick-base64](https://github.com/craftzdog/react-native-quick-base64)
-  * 4x faster on iOS
+- [react-native-quick-md5](https://github.com/craftzdog/react-native-quick-md5)
+  - 10x faster on iOS and 8x faster on Android
+- [react-native-quick-base64](https://github.com/craftzdog/react-native-quick-base64)
+  - 4x faster on iOS
 
 ## Should I adopt React Native for my new project? - Yes.
 
@@ -236,7 +240,7 @@ DHH said in his book:
 
 > **It’s a Problem When It’s a Problem**  
 > Create a great app and then worry about what to do once it’s wildly successful.
-> 
+>
 > -- DHH, "Getting Real"
 
 I've successfully built a note-taking app that runs on 5 platforms with Electron and React Native, because they allowed me to reuse a large amount of my JS codebase between mobile and desktop apps.
@@ -249,7 +253,7 @@ To put it in a nutshell, React Native is great for new projects, but not enough 
 
 I hope that helps!
 
-* * *
+---
 
 - Follow me on [Twitter](https://twitter.com/inkdrop_app) & [Instagram](https://instagram.com/craftzdog)
 - [Solo developer's Discord community](https://discord.gg/S7hDmvh)
@@ -259,5 +263,3 @@ I hope that helps!
 [![Subscribe Newsletter](https://cdn-images-1.medium.com/max/1600/1*m_OQH1uPXG_JcuW9BTe82A.png)](http://eepurl.com/dNgJo6)
 
 [![My YouTube channel](https://miro.medium.com/proxy/1*r-daItizHpAU-fQZk3ISag.png)](https://www.youtube.com/c/devaslife)
-
-

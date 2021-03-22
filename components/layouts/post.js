@@ -13,7 +13,7 @@ const Post = ({ tweets, children }) => (
       main {
         padding: 15px;
         font-size: 18px;
-        border-left: 1px dashed rgba(66,71,112,0.09);
+        border-left: 1px dashed rgba(66, 71, 112, 0.09);
       }
       @media (max-width: 500px) {
         font-size: 16px;
@@ -21,11 +21,6 @@ const Post = ({ tweets, children }) => (
 
       article {
         scroll-margin-top: 50px;
-      }
-
-      :global(h1, h2) {
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-weight: bold;
       }
 
       @media (min-width: 500px) {

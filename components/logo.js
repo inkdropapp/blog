@@ -1,11 +1,9 @@
 import Image from "next/image";
 
 const Logo = () => (
-  <span className='logo'>
-    <Image src='/images/footprint.png' width={20} height={20} />
-    <span className='title'>
-      Dev as Life
-    </span>
+  <span className="logo">
+    <Image src="/images/footprint.png" width={20} height={20} />
+    <span className="title">Dev as Life</span>
     <style jsx>{`
       .logo {
         font-weight: bold;
@@ -22,7 +20,7 @@ const Logo = () => (
       }
 
       .title {
-        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-family: "M PLUS Rounded 1c", sans-serif;
         font-weight: bold;
         margin-left: 6px;
       }

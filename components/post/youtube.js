@@ -5,7 +5,7 @@ const Youtube = props => (
     <YouTube {...withDefault(props)} />
     <style jsx>{`
       div {
-        margin: 15px 0;
+        margin: 0px -15px;
       }
     `}</style>
   </div>

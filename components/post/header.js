@@ -95,6 +95,10 @@ const Header = ({
       </nav>
 
       <style jsx>{`
+        h1 {
+          font-family: var(--roundFontFamily);
+        }
+
         nav {
           display: flex;
           justify-content: space-between;

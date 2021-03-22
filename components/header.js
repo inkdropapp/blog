@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => (
   <header>
-    <div className='container'>
+    <div className="container">
       <Link href="/">
         <a className="logo" href="/">
           <Logo />
@@ -18,7 +18,11 @@ const Header = () => (
         >
           Source
         </a>
-        <a className="follow" target="_blank" href="https://twitter.com/inkdrop_app">
+        <a
+          className="follow"
+          target="_blank"
+          href="https://twitter.com/inkdrop_app"
+        >
           Follow Me
         </a>
       </nav>
@@ -26,14 +30,14 @@ const Header = () => (
 
     <style jsx>{`
       header {
-        border-bottom: 1px dashed rgba(66,71,112,0.09);
+        border-bottom: 1px dashed rgba(66, 71, 112, 0.09);
       }
 
       .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-left: 1px dashed rgba(66,71,112,0.09);
+        border-left: 1px dashed rgba(66, 71, 112, 0.09);
       }
 
       nav {
@@ -57,6 +61,7 @@ const Header = () => (
         color: #fff;
         background: #000;
         font-size: 13px;
+        border-radius: 2em;
       }
 
       a.logo {

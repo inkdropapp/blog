@@ -18,7 +18,7 @@ import Quote from "../post/quote";
 import UL, { LI as ULI } from "../post/bullets-list";
 import OL, { LI as OLI } from "../post/numbers-list";
 import TLDR from "../post/tldr";
-import Hr from '../post/hr'
+import Hr from "../post/hr";
 
 const components = {
   h2: H2,
