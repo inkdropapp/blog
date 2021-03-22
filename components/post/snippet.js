@@ -19,7 +19,7 @@ const Snippet = ({
   caption = null,
 }) => {
   const highlightedLines = highlight ? highlight.split(",").map(Number) : [];
-  const language = className
+  const language = (className || "")
     .replace(/language-/, "")
     .replace("-", "")
     .replace("c++", "cpp");
@@ -27,7 +27,6 @@ const Snippet = ({
     <div className="snippet">
       <pre
         className={`
-            ${className}
             ${scroll ? "" : "no-scroll"}
             ${smallText ? "small-text" : ""}
           `}
