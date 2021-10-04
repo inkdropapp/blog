@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import THEME from "prism-react-renderer//themes/shadesOfPurple";
 (typeof global !== "undefined" ? global : window).Prism = Prism;
 
+require("prismjs");
 require("prismjs/components/prism-javascript");
 require("prismjs/components/prism-objectivec");
 require("prismjs/components/prism-java");
@@ -16,7 +17,7 @@ const Snippet = ({
   children,
   smallText = false,
   scroll = true,
-  caption = null,
+  caption = null
 }) => {
   const highlightedLines = highlight ? highlight.split(",").map(Number) : [];
   const language = (className || "")
@@ -50,7 +51,7 @@ const Snippet = ({
                         ? {
                             background: "var(--c-highlight)",
                             margin: "0 -1rem",
-                            padding: "0 1rem",
+                            padding: "0 1rem"
                           }
                         : null
                     }
