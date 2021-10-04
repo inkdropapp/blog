@@ -5,11 +5,13 @@ import THEME from "prism-react-renderer//themes/shadesOfPurple";
 
 require("prismjs");
 require("prismjs/components/prism-javascript");
-require("prismjs/components/prism-objectivec");
 require("prismjs/components/prism-java");
 require("prismjs/components/prism-kotlin");
 require("prismjs/components/prism-swift");
+/*
+require("prismjs/components/prism-objectivec");
 require("prismjs/components/prism-cpp");
+ */
 
 const Snippet = ({
   className,

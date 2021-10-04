@@ -1,6 +1,7 @@
 import Layout from "../components/layouts/main";
 import Link from "next/link";
-import { posts } from "../posts";
+import postsData from "../posts";
+const { posts } = postsData;
 
 export function getStaticProps() {
   return {
@@ -20,7 +21,7 @@ const Home = ({ posts, date }) => (
         <li key={post.id}>
           <span>{post.date}</span>
           <Link href={post.url}>
-            <a>{post.title}</a>
+            <a href={post.url}>{post.title}</a>
           </Link>
         </li>
       ))}
