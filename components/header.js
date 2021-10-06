@@ -1,5 +1,18 @@
 import Logo from "./logo";
 import Link from "next/link";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+  Button
+} from "@chakra-ui/react";
 
 const Header = () => (
   <header>
@@ -25,6 +38,16 @@ const Header = () => (
         >
           Follow Me
         </a>
+        <Menu>
+          <MenuButton as={Button}>Menu</MenuButton>
+          <MenuList>
+            <MenuItem>Download</MenuItem>
+            <MenuItem>Create a Copy</MenuItem>
+            <MenuItem>Mark as Draft</MenuItem>
+            <MenuItem>Delete</MenuItem>
+            <MenuItem>Attend a Workshop</MenuItem>
+          </MenuList>
+        </Menu>
       </nav>
     </div>
 
