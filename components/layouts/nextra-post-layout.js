@@ -6,7 +6,6 @@ import Post from "./post";
 import Header from "../post/header";
 import Footer from "../post/footer";
 import Figure, { Image } from "../post/figure";
-import withViews from "../../lib/with-views";
 
 import P from "../post/paragraph";
 import Link from "next/link";
@@ -43,14 +42,14 @@ const components = {
     return <Link href={href}>{children}</Link>;
   },
   Tweet,
-  blockquote: Quote,
+  blockquote: Quote
 };
 
 const NextraPostLayout = ({ meta }) => {
-  return withViews(({ tweets, views, children }) => {
+  return ({ tweets, children }) => {
     return (
       <Post tweets={tweets}>
-        <Header title={meta.title} date={meta.date} views={views} />
+        <Header title={meta.title} date={meta.date} />
         <Head>
           <meta property="og:title" content={meta.title} />
           <meta property="og:site_name" content="Dev as Life Blog" />
@@ -67,7 +66,7 @@ const NextraPostLayout = ({ meta }) => {
         <Footer />
       </Post>
     );
-  });
+  };
 };
 
 export default NextraPostLayout;

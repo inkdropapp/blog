@@ -9,7 +9,6 @@ import { H2 } from "../../components/post/heading";
 import Figure, { Image } from "../../components/post/figure";
 import { Ref, FootNotes, Note } from "../../components/post/footnotes";
 import UL, { LI } from "../../components/post/bullets-list";
-import withViews from "../../lib/with-views";
 import YouTube from "../../components/post/youtube";
 import Head from "next/head";
 import getTweets from "../../lib/get-tweets";
@@ -19,12 +18,11 @@ export async function getStaticProps() {
   return { props: { tweets } };
 }
 
-const Page = withViews(({ tweets, views }) => (
+const Page = ({ tweets }) => (
   <Post tweets={tweets}>
     <Header
       title="How I thrived as an introverted developer"
       date="January 2, 2020"
-      views={views}
     />
     <Head>
       <meta property="og:title" content="201aaa in Review" />
@@ -670,6 +668,6 @@ const Page = withViews(({ tweets, views }) => (
       </Note>
     </FootNotes>
   </Post>
-));
+);
 
 export default Page;
