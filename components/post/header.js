@@ -14,7 +14,7 @@ const Header = ({
   views = null,
   tweetUrl = null,
   twitterRetweets = null,
-  twitterLikes = null,
+  twitterLikes = null
 }) => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -96,6 +96,8 @@ const Header = ({
 
       <style jsx>{`
         h1 {
+          font-size: 24px;
+          font-weight: bold;
           font-family: var(--roundFontFamily);
         }
 
