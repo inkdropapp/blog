@@ -57,7 +57,6 @@ const Home = ({ posts, date }) => (
       @media (min-width: 500px) {
         ul {
           padding: 20px 0;
-          max-width: 42rem;
           margin: auto;
         }
 

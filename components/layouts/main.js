@@ -4,6 +4,7 @@ import typography from "../../css/typography";
 import colors from "../../css/colors";
 import nprogress from "../../css/nprogress";
 import Header from "../header";
+import { Box, Text, Link, Image, Container } from "@chakra-ui/react";
 
 import "nprogress";
 
@@ -30,7 +31,21 @@ const Main = ({ children, headerActive }) => {
 
       <Header active={headerActive} />
 
-      {children}
+      <Container maxW="container.md">
+        <Box className="box" p={4} display={{ md: "flex" }}>
+          <Box flexShrink={0}>
+            <Image
+              borderRadius="lg"
+              width={{ md: 40 }}
+              src="https://bit.ly/2jYM25F"
+              alt="Woman paying for a purchase"
+            />
+          </Box>
+          <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
+            {children}
+          </Box>
+        </Box>
+      </Container>
 
       <style jsx>{`
         main {

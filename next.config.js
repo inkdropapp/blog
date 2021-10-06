@@ -1,14 +1,12 @@
-const nextra = require("nextra");
-
-module.exports = nextra("./components/layouts/nextra-post-layout")({
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
       "pbs.twimg.com",
       "abs.twimg.com",
       "m.media-amazon.com",
-      "images-na.ssl-images-amazon.com",
-    ],
+      "images-na.ssl-images-amazon.com"
+    ]
   },
   headers() {
     return [
@@ -17,10 +15,10 @@ module.exports = nextra("./components/layouts/nextra-post-layout")({
         headers: [
           {
             key: "content-type",
-            value: "text/xml",
-          },
-        ],
-      },
+            value: "text/xml"
+          }
+        ]
+      }
     ];
   },
   redirects() {
@@ -28,13 +26,13 @@ module.exports = nextra("./components/layouts/nextra-post-layout")({
       {
         source: "/essays/:nested*",
         destination: "/",
-        permanent: true,
+        permanent: true
       },
       {
         source: "/slackin/:nested*",
         destination: "https://github.com/rauchg/slackin",
-        permanent: true,
-      },
+        permanent: true
+      }
     ];
-  },
-});
+  }
+};
