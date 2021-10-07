@@ -1,6 +1,7 @@
 import Layout from "../components/layouts/main";
 import Link from "next/link";
 import postsData from "../posts";
+import { Container, Box, Text, Image, SimpleGrid } from "@chakra-ui/react";
 const { posts } = postsData;
 
 export function getStaticProps() {
@@ -16,68 +17,68 @@ export function getStaticProps() {
 
 const Home = ({ posts, date }) => (
   <Layout>
-    <ul>
-      {posts.map(post => (
-        <li key={post.id}>
-          <span>{post.date}</span>
-          <Link href={post.url}>
-            <a href={post.url}>{post.title}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-
-    <style jsx>{`
-      ul li {
-        padding: 10px 15px;
-      }
-
-      ul li span {
-        color: #5b5b5b;
-        display: block;
-        font-size: 13px;
-      }
-
-      ul li a {
-        font-weight: bold;
-        color: var(--link-color);
-        text-decoration: none;
-      }
-
-      @media (any-hover: hover) {
-        ul li a:hover {
-          background: #eee;
-        }
-
-        ul li a:active {
-          background: #ccc;
-        }
-      }
-
-      @media (min-width: 500px) {
-        ul {
-          padding: 20px 0;
-          margin: auto;
-        }
-
-        ul li {
-          padding-left: 0;
-        }
-
-        ul li a {
-          padding: 10px 15px;
-          transition: 150ms background-color ease-in;
-        }
-
-        ul li span {
-          display: inline-block;
-          width: 160px;
-          padding-right: 10px;
-          text-align: right;
-          font-size: inherit;
-        }
-      }
-    `}</style>
+    <Container>
+      <SimpleGrid columns={[1, 1, 2]} gap={6} textAlign="center">
+        <Box w="100%">
+          <Image
+            borderRadius="lg"
+            w="full"
+            src="/images/banners/youtube.png"
+            alt="My YouTube channel"
+          />
+          YouTube
+        </Box>
+        <Box w="100%">
+          <Image
+            borderRadius="lg"
+            w="full"
+            src="/images/banners/youtube.png"
+            alt="My YouTube channel"
+          />
+          YouTube
+        </Box>
+        <Box w="100%">
+          <Image
+            borderRadius="lg"
+            w="full"
+            src="/images/banners/youtube.png"
+            alt="My YouTube channel"
+          />
+          YouTube
+        </Box>
+        <Box w="100%">
+          <Image
+            borderRadius="lg"
+            w="full"
+            src="/images/banners/youtube.png"
+            alt="My YouTube channel"
+          />
+          YouTube
+        </Box>
+        <Box w="100%">
+          <Image
+            borderRadius="lg"
+            w="full"
+            src="/images/banners/youtube.png"
+            alt="My YouTube channel"
+          />
+          YouTube
+        </Box>
+        <Box w="100%">
+          <Image
+            borderRadius="lg"
+            w="full"
+            src="/images/banners/youtube.png"
+            alt="My YouTube channel"
+          />
+          YouTube
+        </Box>
+        <Box w="100%" h="10" bg="blue.500" />
+        <Box w="100%" h="10" bg="blue.500" />
+        <Box w="100%" h="10" bg="blue.500" />
+        <Box w="100%" h="10" bg="blue.500" />
+      </SimpleGrid>
+    </Container>
   </Layout>
 );
 

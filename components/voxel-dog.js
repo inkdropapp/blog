@@ -108,9 +108,10 @@ const VoxelDog = () => {
       className="voxel-dog"
       m="auto"
       mt={["-40px", "-60px", "-120px"]}
-      mb={["-50px", "-90px", "-160px"]}
+      mb={["-90px", "-140px", "-200px"]}
       w={[240, 480, 640]}
       h={[240, 480, 640]}
+      pointerEvents="none"
     ></Box>
   );
 };

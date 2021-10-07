@@ -32,7 +32,7 @@ const Logo = () => {
             fontWeight="bold"
             ml={3}
           >
-            Dev as Life
+            Takuya Matsuyama
           </Text>
         </LogoBox>
       </a>

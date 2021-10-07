@@ -4,7 +4,7 @@ import colors from "../../css/colors";
 import nprogress from "../../css/nprogress";
 import NavBar from "../navbar";
 import Header from "../header";
-import { Box, Text, Link, Image, Container } from "@chakra-ui/react";
+import { Box, Text, Image, Container, SimpleGrid } from "@chakra-ui/react";
 import VoxelDog from "../voxel-dog";
 import NoSsr from "../no-ssr";
 
@@ -15,7 +15,7 @@ const Main = ({ children, headerActive }) => {
     <main style={{ overflow: "hidden" }}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Dev as Life - Blog</title>
+        <title>Takuya Matsuyama - Homepage</title>
       </Head>
 
       <style jsx global>
@@ -32,19 +32,7 @@ const Main = ({ children, headerActive }) => {
           <VoxelDog />
         </NoSsr>
 
-        <Box className="box" p={4} display={{ md: "flex" }}>
-          <Box flexShrink={0}>
-            <Image
-              borderRadius="lg"
-              width={{ md: 40 }}
-              src="https://bit.ly/2jYM25F"
-              alt="Woman paying for a purchase"
-            />
-          </Box>
-          <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
-            {children}
-          </Box>
-        </Box>
+        {children}
       </Container>
     </main>
   );
