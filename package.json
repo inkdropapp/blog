@@ -3,6 +3,7 @@
   "description": "blog.inkdrop.app (blog)",
   "license": "MIT",
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.9",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
@@ -32,6 +33,7 @@
     "rehype-sanitize": "^3.0.0",
     "remark-parse": "^10.0.0",
     "remark-rehype": "^8.0.0",
+    "three": "^0.133.1",
     "time-ago": "^0.2.1",
     "unified": "^8.4.2",
     "unist-util-visit": "^2.0.3"

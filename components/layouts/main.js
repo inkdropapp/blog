@@ -1,10 +1,10 @@
 import Head from "next/head";
-import reset from "../../css/reset";
 import typography from "../../css/typography";
 import colors from "../../css/colors";
 import nprogress from "../../css/nprogress";
 import Header from "../header";
 import { Box, Text, Link, Image, Container } from "@chakra-ui/react";
+import VoxelDog from "../voxel-dog";
 
 import "nprogress";
 
@@ -16,9 +16,6 @@ const Main = ({ children, headerActive }) => {
         <title>Dev as Life - Blog</title>
       </Head>
 
-      <style jsx global>
-        {reset}
-      </style>
       <style jsx global>
         {colors}
       </style>
@@ -40,6 +37,7 @@ const Main = ({ children, headerActive }) => {
               src="https://bit.ly/2jYM25F"
               alt="Woman paying for a purchase"
             />
+            <VoxelDog />
           </Box>
           <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
             {children}

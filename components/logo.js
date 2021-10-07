@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { Text } from "@chakra-ui/react";
 
 const Logo = () => (
   <span className="logo">
     <Image src="/images/footprint.png" width={20} height={20} />
-    <span className="title">Dev as Life</span>
+    <Text className="title" ml={2}>
+      Dev as Life
+    </Text>
     <style jsx>{`
       .logo {
         font-weight: bold;

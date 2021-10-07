@@ -11,8 +11,10 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
-  Button
+  IconButton
 } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import ThemeToggleButton from "./theme-toggle-button";
 
 const Header = () => (
   <header>
@@ -38,8 +40,15 @@ const Header = () => (
         >
           Follow Me
         </a>
+
+        <ThemeToggleButton />
         <Menu>
-          <MenuButton as={Button}>Menu</MenuButton>
+          <MenuButton
+            as={IconButton}
+            icon={<HamburgerIcon />}
+            variant="outline"
+            aria-label="Options"
+          />
           <MenuList>
             <MenuItem>Download</MenuItem>
             <MenuItem>Create a Copy</MenuItem>
@@ -76,12 +85,10 @@ const Header = () => (
 
       nav a.src {
         font-size: 13px;
-        color: #333;
       }
 
       nav a.follow {
         font-weight: bold;
-        color: #fff;
         background: #000;
         font-size: 13px;
         border-radius: 2em;
@@ -89,7 +96,6 @@ const Header = () => (
 
       a.logo {
         text-decoration: none;
-        color: #000;
         display: inline-flex;
         transition: 150ms background-color ease;
         padding: 5px;
