@@ -4,7 +4,7 @@ const ThemeToggleButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Button onClick={toggleColorMode}>
+    <Button onClick={toggleColorMode} variant="outline">
       Toggle {colorMode === "light" ? "Dark" : "Light"}
     </Button>
   );

@@ -4,16 +4,14 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/model";
 
-const VoxelDog = () => {
-  if (typeof window === "undefined") {
-    return null;
-  }
+function easeOutCirc(x) {
+  return Math.sqrt(1 - Math.pow(x - 1, 4));
+}
 
+const VoxelDog = () => {
   const refContainer = useRef();
   const [renderer, setRenderer] = useState();
-  const [camera] = useState(
-    new THREE.OrthographicCamera(-6, 6, 6, -6, 0.01, 50000)
-  );
+  const [camera, setCamera] = useState();
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
@@ -28,19 +26,31 @@ const VoxelDog = () => {
   useEffect(() => {
     const { current: container } = refContainer;
     if (container && !renderer) {
+      const scW = container.clientWidth;
+      const scH = container.clientHeight;
+      const aspectRatio = scW / scH;
+
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true
       });
       renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setSize(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      console.log();
+      const camera = new THREE.OrthographicCamera(
+        -scW / 80,
+        scW / 80,
+        scH / 80,
+        -scH / 80,
+        0.01,
+        50000
+      );
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
+      setCamera(camera);
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
       scene.add(ambientLight);
@@ -65,7 +75,7 @@ const VoxelDog = () => {
         if (frame <= 100) {
           const invF = 100 - frame;
           const p = initialCameraPosition;
-          const rotSpeed = (invF * invF) / 300;
+          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
           camera.position.y = 10;
           camera.position.x =
@@ -89,7 +99,17 @@ const VoxelDog = () => {
     }
   }, []);
 
-  return <Box ref={refContainer} className="voxel-dog" w={300} h={240}></Box>;
+  return (
+    <Box
+      ref={refContainer}
+      className="voxel-dog"
+      m="auto"
+      mt="-120px"
+      mb="-160px"
+      w={[160, 240, 320, 640]}
+      h={[120, 180, 240, 640]}
+    ></Box>
+  );
 };
 
 export default VoxelDog;

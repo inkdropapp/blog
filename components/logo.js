@@ -1,38 +1,43 @@
+import Link from "next/link";
 import Image from "next/image";
-import { Text } from "@chakra-ui/react";
+import { Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import styled from "@emotion/styled";
 
-const Logo = () => (
-  <span className="logo">
-    <Image src="/images/footprint.png" width={20} height={20} />
-    <Text className="title" ml={2}>
-      Dev as Life
-    </Text>
-    <style jsx>{`
-      .logo {
-        font-weight: bold;
-        font-size: 18px;
-        display: inline-flex;
-        align-items: center;
-        height: 30px;
-        line-height: 20px;
-        padding: 10px;
-      }
+const LogoBox = styled.span`
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  line-height: 20px;
+  padding: 10px;
 
-      .logo:hover :global(img) {
-        transform: rotate(20deg);
-      }
+  &:hover img {
+    transform: rotate(20deg);
+  }
+`;
 
-      .title {
-        font-family: "M PLUS Rounded 1c", sans-serif;
-        font-weight: bold;
-        margin-left: 6px;
-      }
+const Logo = () => {
+  const footPrintImg = `/images/footprint${useColorModeValue("", "-dark")}.png`;
 
-      svg {
-        margin-right: 10px;
-      }
-    `}</style>
-  </span>
-);
+  return (
+    <Link href="/">
+      <a>
+        <LogoBox>
+          <Image src={footPrintImg} width={20} height={20} />
+          <Text
+            color={useColorModeValue("gray.800", "whiteAlpha.900")}
+            ml={2}
+            fontFamily='M PLUS Rounded 1c", sans-serif'
+            fontWeight="bold"
+            ml={3}
+          >
+            Dev as Life
+          </Text>
+        </LogoBox>
+      </a>
+    </Link>
+  );
+};
 
 export default Logo;
