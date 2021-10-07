@@ -40,11 +40,14 @@ const VoxelDog = () => {
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
+      // 640 -> 240
+      // 8   -> 6
+      const scale = scW * 0.005 + 4.8;
       const camera = new THREE.OrthographicCamera(
-        -scW / 80,
-        scW / 80,
-        scH / 80,
-        -scH / 80,
+        -scale,
+        scale,
+        scale,
+        -scale,
         0.01,
         50000
       );
@@ -104,10 +107,10 @@ const VoxelDog = () => {
       ref={refContainer}
       className="voxel-dog"
       m="auto"
-      mt="-120px"
-      mb="-160px"
-      w={[160, 240, 320, 640]}
-      h={[120, 180, 240, 640]}
+      mt={["-40px", "-60px", "-120px"]}
+      mb={["-50px", "-90px", "-160px"]}
+      w={[240, 480, 640]}
+      h={[240, 480, 640]}
     ></Box>
   );
 };
