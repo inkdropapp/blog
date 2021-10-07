@@ -18,6 +18,15 @@ export function getStaticProps() {
 const Home = ({ posts, date }) => (
   <Layout>
     <Container>
+      <Box
+        borderRadius="lg"
+        mb={6}
+        p={3}
+        textAlign="center"
+        bg="whiteAlpha.500"
+      >
+        Hello, I'm a full-stack developer based in Japan!
+      </Box>
       <SimpleGrid columns={[1, 1, 2]} gap={6} textAlign="center">
         <Box w="100%">
           <Image
