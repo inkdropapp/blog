@@ -1,5 +1,6 @@
-import Link from "next/link";
+import NextLink from "next/link";
 import {
+  Link,
   Container,
   Heading,
   Box,
@@ -62,7 +63,11 @@ const Home = () => (
           for all things launching products, from planning and designing all the
           way to solving real-life problems with code. When not online, he loves
           hanging out with his camera. Currently, he is living off of his own
-          product called Inkdrop.
+          product called{" "}
+          <NextLink href="/works/inkdrop">
+            <Link>Inkdrop</Link>
+          </NextLink>
+          .
         </Paragraph>
       </Section>
 

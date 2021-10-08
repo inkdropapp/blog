@@ -5,7 +5,7 @@ import {
   Heading,
   Box,
   Text,
-  Link,
+  LinkBox,
   SimpleGrid,
   Divider,
   useColorModeValue
@@ -27,7 +27,7 @@ import thumbAmembo from "../public/images/works/amembo_eyecatch.png";
 const WorkItem = ({ children, id }) => (
   <Box w="100%" textAlign="center">
     <NextLink href={`/works/${id}`}>
-      <Link textUnderlineOffset={2}>{children}</Link>
+      <LinkBox cursor="pointer">{children}</LinkBox>
     </NextLink>
   </Box>
 );
