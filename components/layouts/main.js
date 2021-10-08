@@ -7,11 +7,6 @@ import VoxelDog from "../voxel-dog";
 import NoSsr from "../no-ssr";
 
 const Main = ({ children, router }) => {
-  const [dogLoaded, setDogLoaded] = useState(false);
-  const handleLoadDog = useCallback(() => {
-    setDogLoaded(true);
-  }, [dogLoaded]);
-
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -23,10 +18,10 @@ const Main = ({ children, router }) => {
 
       <Container maxW="container.md" pt={14}>
         <NoSsr>
-          <VoxelDog onLoad={handleLoadDog} />
+          <VoxelDog />
         </NoSsr>
 
-        {dogLoaded && children}
+        {children}
       </Container>
     </Box>
   );

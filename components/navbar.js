@@ -19,7 +19,6 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
-import styled from "@emotion/styled";
 
 const LinkItem = ({ href, path, children }) => {
   const active = path === "/works";
