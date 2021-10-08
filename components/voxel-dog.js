@@ -8,7 +8,7 @@ function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
-const VoxelDog = () => {
+const VoxelDog = ({ onLoad }) => {
   const refContainer = useRef();
   const [renderer, setRenderer] = useState();
   const [camera, setCamera] = useState();
@@ -63,9 +63,12 @@ const VoxelDog = () => {
       controls.target = target;
       setControls(controls);
 
-      loadGLTFModel(scene, "dog.glb", {
+      loadGLTFModel(scene, "/dog.glb", {
         receiveShadow: false,
         castShadow: false
+      }).then(() => {
+        onLoad && onLoad();
+        animate();
       });
 
       let req = null;
@@ -93,8 +96,6 @@ const VoxelDog = () => {
         renderer.render(scene, camera);
       };
 
-      animate();
-
       return () => {
         cancelAnimationFrame(req);
         renderer.dispose();
@@ -107,10 +108,10 @@ const VoxelDog = () => {
       ref={refContainer}
       className="voxel-dog"
       m="auto"
-      mt={["-40px", "-60px", "-120px"]}
-      mb={["-90px", "-140px", "-200px"]}
-      w={[240, 480, 640]}
-      h={[240, 480, 640]}
+      mt={["-20px", "-60px", "-120px"]}
+      mb={["-40px", "-140px", "-200px"]}
+      w={[280, 480, 640]}
+      h={[280, 480, 640]}
       pointerEvents="none"
     ></Box>
   );

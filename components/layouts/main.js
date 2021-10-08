@@ -1,40 +1,34 @@
+import { useState, useCallback } from "react";
 import Head from "next/head";
-import typography from "../../css/typography";
-import colors from "../../css/colors";
-import nprogress from "../../css/nprogress";
 import NavBar from "../navbar";
 import Header from "../header";
 import { Box, Text, Image, Container, SimpleGrid } from "@chakra-ui/react";
 import VoxelDog from "../voxel-dog";
 import NoSsr from "../no-ssr";
 
-import "nprogress";
+const Main = ({ children, router }) => {
+  const [dogLoaded, setDogLoaded] = useState(false);
+  const handleLoadDog = useCallback(() => {
+    setDogLoaded(true);
+  }, [dogLoaded]);
 
-const Main = ({ children, headerActive }) => {
   return (
-    <main style={{ overflow: "hidden" }}>
+    <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Takuya Matsuyama - Homepage</title>
       </Head>
 
-      <style jsx global>
-        {nprogress}
-      </style>
-      <style jsx global>
-        {typography}
-      </style>
-
-      <NavBar />
+      <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
         <NoSsr>
-          <VoxelDog />
+          <VoxelDog onLoad={handleLoadDog} />
         </NoSsr>
 
-        {children}
+        {dogLoaded && children}
       </Container>
-    </main>
+    </Box>
   );
 };
 

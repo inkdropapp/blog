@@ -1,7 +1,9 @@
 import Logo from "./logo";
+import NextLink from "next/link";
 import {
   Container,
   Box,
+  Link,
   Stack,
   Heading,
   Flex,
@@ -17,8 +19,25 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
+import styled from "@emotion/styled";
 
-const Header = props => {
+const LinkItem = ({ href, path, children }) => {
+  const active = path === "/works";
+  return (
+    <NextLink href={href}>
+      <Link
+        p={2}
+        bg={active ? "glassTeal" : undefined}
+        color={active ? "#202023" : undefined}
+      >
+        {children}
+      </Link>
+    </NextLink>
+  );
+};
+
+const Navbar = props => {
+  const { path } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleToggle = () => (isOpen ? onClose() : onOpen());
 
@@ -55,7 +74,9 @@ const Header = props => {
           mt={{ base: 4, md: 0 }}
         >
           <Text>About</Text>
-          <Text>Works</Text>
+          <LinkItem href="/works" path={path}>
+            Works
+          </LinkItem>
           <Text>Art</Text>
         </Stack>
 
@@ -71,7 +92,7 @@ const Header = props => {
         </Box>
 
         <Box display={{ base: "block", md: "none" }} flex={1} textAlign="right">
-          <Menu>
+          <Menu id="nav-menu-1">
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
@@ -81,8 +102,6 @@ const Header = props => {
             <MenuList>
               <MenuItem>Download</MenuItem>
               <MenuItem>Create a Copy</MenuItem>
-              <MenuItem>Mark as Draft</MenuItem>
-              <MenuItem>Delete</MenuItem>
               <MenuItem>Attend a Workshop</MenuItem>
             </MenuList>
           </Menu>
@@ -92,4 +111,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export default Navbar;
