@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -6,7 +7,7 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 }
 };
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title }) => (
   <motion.article
     initial="hidden"
     animate="enter"
@@ -14,7 +15,14 @@ const Layout = ({ children }) => (
     variants={variants}
     transition={{ duration: 0.4, type: "easeInOut" }}
   >
-    {children}
+    <>
+      {title && (
+        <Head>
+          <title>{title} - Takuya Matsuyama</title>
+        </Head>
+      )}
+      {children}
+    </>
   </motion.article>
 );
 
