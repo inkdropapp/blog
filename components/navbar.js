@@ -14,14 +14,13 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useDisclosure,
   useColorModeValue
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
 
 const LinkItem = ({ href, path, children }) => {
-  const active = path === "/works";
+  const active = path === href;
   return (
     <NextLink href={href}>
       <Link
@@ -39,8 +38,6 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
   const { path } = props;
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const handleToggle = () => (isOpen ? onClose() : onOpen());
 
   return (
     <Box
@@ -68,44 +65,35 @@ const Navbar = props => {
 
         <Stack
           direction={{ base: "column", md: "row" }}
-          display={{ base: isOpen ? "block" : "none", md: "flex" }}
+          display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <Text>About</Text>
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <Text>Art</Text>
         </Stack>
 
-        <Box
-          display={{ base: isOpen ? "block" : "none", md: "block" }}
-          mt={{ base: 4, md: 0 }}
-        >
+        <Box flex={1} align="right">
           <ThemeToggleButton />
-        </Box>
 
-        <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
-          <HamburgerIcon />
-        </Box>
-
-        <Box display={{ base: "block", md: "none" }} flex={1} textAlign="right">
-          <Menu id="nav-menu-1">
-            <MenuButton
-              as={IconButton}
-              icon={<HamburgerIcon />}
-              variant="outline"
-              aria-label="Options"
-            />
-            <MenuList>
-              <MenuItem>Download</MenuItem>
-              <MenuItem>Create a Copy</MenuItem>
-              <MenuItem>Attend a Workshop</MenuItem>
-            </MenuList>
-          </Menu>
+          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
+              <MenuList>
+                <NextLink href="/works" passHref>
+                  <MenuItem as={Link}>Works</MenuItem>
+                </NextLink>
+              </MenuList>
+            </Menu>
+          </Box>
         </Box>
       </Container>
     </Box>

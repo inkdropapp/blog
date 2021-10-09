@@ -7,12 +7,24 @@ import {
   Text,
   Image,
   SimpleGrid,
+  Button,
+  List,
+  ListItem,
+  Icon,
+  IconButton,
   useColorModeValue
 } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import Paragraph from "../components/paragraph";
 import { BioSection, BioYear } from "../components/bio";
 import Layout from "../components/layouts/article";
 import Section from "../components/section";
+import {
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoYoutube,
+  IoLogoGithub
+} from "react-icons/io5";
 
 const Home = () => (
   <Layout>
@@ -69,6 +81,13 @@ const Home = () => (
           </NextLink>
           .
         </Paragraph>
+        <Box align="center" my={4}>
+          <NextLink href="/works">
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              My portfolio
+            </Button>
+          </NextLink>
+        </Box>
       </Section>
 
       <Section delay={0.2}>
@@ -103,6 +122,69 @@ const Home = () => (
           Art, Music, Drawing, Playing Drums, Photography, Leica, Machine
           Learning
         </Paragraph>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          Links
+        </Heading>
+        <List>
+          <ListItem>
+            <Link href="https://github.com/craftzdog" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoGithub} />}
+              >
+                @craftzdog
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://twitter.com/inkdrop_app" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoTwitter} />}
+              >
+                @inkdrop_app
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://twitter.com/craftzdog" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoTwitter} />}
+              >
+                @craftzdog
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://instagram.com/craftzdog" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoInstagram} />}
+              >
+                @craftzdog
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://www.youtube.com/devaslife" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoYoutube} />}
+              >
+                devaslife
+              </Button>
+            </Link>
+          </ListItem>
+        </List>
       </Section>
     </Container>
   </Layout>
