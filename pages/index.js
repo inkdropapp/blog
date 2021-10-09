@@ -19,6 +19,7 @@ import Paragraph from "../components/paragraph";
 import { BioSection, BioYear } from "../components/bio";
 import Layout from "../components/layouts/article";
 import Section from "../components/section";
+import Contents from "../components/contents";
 import {
   IoLogoTwitter,
   IoLogoInstagram,
@@ -185,6 +186,13 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          Contents
+        </Heading>
+        <Contents />
       </Section>
     </Container>
   </Layout>
