@@ -6,6 +6,7 @@ import {
   Box,
   Text,
   LinkBox,
+  LinkOverlay,
   SimpleGrid,
   Divider,
   useColorModeValue
@@ -24,24 +25,25 @@ import thumbPichu2 from "../public/images/works/pichu2_eyecatch.png";
 import thumbFreeDBTagger from "../public/images/works/freedbtagger_eyecatch.png";
 import thumbAmembo from "../public/images/works/amembo_eyecatch.png";
 
-const WorkItem = ({ children, id }) => (
+const WorkItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
     <NextLink href={`/works/${id}`}>
-      <LinkBox cursor="pointer">{children}</LinkBox>
+      <LinkBox cursor="pointer">
+        <Image
+          src={thumbnail}
+          alt={title}
+          className="work-thumbnail"
+          placeholder="blur"
+        />
+        <LinkOverlay href={`/works/${id}`}>
+          <Text mt={2} fontSize={20}>
+            {title}
+          </Text>
+        </LinkOverlay>
+        <Text fontSize={14}>{children}</Text>
+      </LinkBox>
     </NextLink>
   </Box>
-);
-
-const WorkName = ({ children }) => (
-  <Text mt={2} fontSize={20}>
-    {children}
-  </Text>
-);
-
-const WorkDescription = ({ children }) => <Text fontSize={14}>{children}</Text>;
-
-const WorkImage = ({ src, alt }) => (
-  <Image src={src} alt={alt} className="work-thumbnail" placeholder="blur" />
 );
 
 const Works = () => (
@@ -53,41 +55,31 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <WorkItem id="inkdrop">
-            <WorkImage src={thumbInkdrop} alt="Inkdrop" />
-            <WorkName>Inkdrop</WorkName>
-            <WorkDescription>
-              A Markdown note-taking app with 100+ plugins, cross-platform and
-              encrypted data sync support
-            </WorkDescription>
+          <WorkItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
+            A Markdown note-taking app with 100+ plugins, cross-platform and
+            encrypted data sync support
           </WorkItem>
         </Section>
         <Section>
-          <WorkItem id="walknote">
-            <WorkImage src={thumbWalknote} alt="walknote" />
-            <WorkName>walknote</WorkName>
-            <WorkDescription>Music recommendation app for iOS</WorkDescription>
+          <WorkItem id="walknote" title="walknote" thumbnail={thumbWalknote}>
+            Music recommendation app for iOS
           </WorkItem>
         </Section>
 
         <Section delay={0.1}>
-          <WorkItem id="fourpainters">
-            <WorkImage src={thumbFourPainters} alt="The four painters" />
-            <WorkName>The four painters</WorkName>
-            <WorkDescription>
-              A video work generated with deep learning, imitating famous four
-              painters like Van Gogh
-            </WorkDescription>
+          <WorkItem
+            id="fourpainters"
+            title="The four painters"
+            thumbnail={thumbFourPainters}
+          >
+            A video work generated with deep learning, imitating famous four
+            painters like Van Gogh
           </WorkItem>
         </Section>
         <Section delay={0.1}>
-          <WorkItem>
-            <WorkImage src={thumbMenkiki} alt="Menkiki" />
-            <WorkName>Menkiki</WorkName>
-            <WorkDescription>
-              An app that suggests ramen(noodle) shops based on a given photo of
-              the ramen you want to eat
-            </WorkDescription>
+          <WorkItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
+            An app that suggests ramen(noodle) shops based on a given photo of
+            the ramen you want to eat
           </WorkItem>
         </Section>
       </SimpleGrid>
@@ -102,21 +94,17 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.3}>
-          <WorkItem>
-            <WorkImage src={thumbModeTokyo} alt="Mode.Tokyo" />
-            <WorkName>mode.tokyo</WorkName>
-            <WorkDescription>
-              The mode magazine for understanding to personally enjoy Japan
-            </WorkDescription>
+          <WorkItem
+            id="modetokyo"
+            thumbnail={thumbModeTokyo}
+            title="mode.tokyo"
+          >
+            The mode magazine for understanding to personally enjoy Japan
           </WorkItem>
         </Section>
         <Section delay={0.3}>
-          <WorkItem>
-            <WorkImage src={thumbStyly} alt="Styly" />
-            <WorkName>STYLY</WorkName>
-            <WorkDescription>
-              A VR Creative tools for fashion brands
-            </WorkDescription>
+          <WorkItem id="styly" thumbnail={thumbStyly} title="Styly">
+            A VR Creative tools for fashion brands
           </WorkItem>
         </Section>
       </SimpleGrid>
@@ -131,31 +119,23 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.5}>
-          <WorkItem>
-            <WorkImage src={thumbPichu2} alt="Pichu pichu" />
-            <WorkName>Pichu* Pichu</WorkName>
-            <WorkDescription>
-              Twitter client app for iPhone Safari
-            </WorkDescription>
+          <WorkItem id="pichu2" thumbnail={thumbPichu2} title="Pichu*Pichu">
+            Twitter client app for iPhone Safari
           </WorkItem>
         </Section>
         <Section delay={0.5}>
-          <WorkItem>
-            <WorkImage src={thumbFreeDBTagger} alt="freeDBTagger" />
-            <WorkName>freeDBTagger</WorkName>
-            <WorkDescription>
-              Automatic audio file tagging tool using FreeDB for Windows
-            </WorkDescription>
+          <WorkItem
+            id="freedbtagger"
+            thumbnail={thumbFreeDBTagger}
+            title="freeDBTagger"
+          >
+            Automatic audio file tagging tool using FreeDB for Windows
           </WorkItem>
         </Section>
         <Section delay={0.6}>
-          <WorkItem>
-            <WorkImage src={thumbAmembo} alt="Amembo" />
-            <WorkName>Amembo</WorkName>
-            <WorkDescription>
-              P2P private file sharing tool with MSN Messenger integration for
-              Windows
-            </WorkDescription>
+          <WorkItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
+            P2P private file sharing tool with MSN Messenger integration for
+            Windows
           </WorkItem>
         </Section>
       </SimpleGrid>
