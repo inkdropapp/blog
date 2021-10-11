@@ -7,8 +7,6 @@ import {
   ListItem,
   SimpleGrid,
   UnorderedList,
-  Heading,
-  Center,
   Image
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'

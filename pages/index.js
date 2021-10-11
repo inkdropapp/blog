@@ -4,14 +4,12 @@ import {
   Container,
   Heading,
   Box,
-  Text,
   Image,
   SimpleGrid,
   Button,
   List,
   ListItem,
   Icon,
-  IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -23,7 +21,6 @@ import { GridItem } from '../components/grid-item'
 import {
   IoLogoTwitter,
   IoLogoInstagram,
-  IoLogoYoutube,
   IoLogoGithub,
   IoLogoDiscord
 } from 'react-icons/io5'

@@ -1,9 +1,6 @@
-import NextLink from 'next/link'
-import Image from 'next/image'
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import Contents from '../components/contents'
 import { GridItem } from '../components/grid-item'
 
 import thumbFishWorkflow from '../public/images/contents/youtube-fish-workflow.jpg'

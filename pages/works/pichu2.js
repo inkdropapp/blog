@@ -1,16 +1,12 @@
 import {
-  Box,
   Container,
   Badge,
   Link,
   List,
   ListItem,
-  SimpleGrid,
   UnorderedList,
   Heading,
-  Center,
-  Image,
-  AspectRatio
+  Center
 } from '@chakra-ui/react'
 import Layout from '../../components/layouts/article'
 import { ExternalLinkIcon } from '@chakra-ui/icons'

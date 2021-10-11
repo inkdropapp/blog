@@ -5,7 +5,6 @@ import {
   Text,
   Container,
   Divider,
-  Link,
   Button
 } from '@chakra-ui/react'
 

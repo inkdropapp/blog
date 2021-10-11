@@ -12,7 +12,7 @@ const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const [renderer, setRenderer] = useState()
-  const [camera, setCamera] = useState()
+  const [_camera, setCamera] = useState()
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0))
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
@@ -22,14 +22,13 @@ const VoxelDog = () => {
     )
   )
   const [scene] = useState(new THREE.Scene())
-  const [controls, setControls] = useState()
+  const [_controls, setControls] = useState()
 
   const handleWindowResize = useCallback(() => {
     const { current: container } = refContainer
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
-      const aspectRatio = scW / scH
 
       renderer.setSize(scW, scH)
     }
@@ -41,7 +40,6 @@ const VoxelDog = () => {
     if (container && !renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
-      const aspectRatio = scW / scH
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
@@ -92,7 +90,6 @@ const VoxelDog = () => {
         frame = frame <= 100 ? frame + 1 : frame
 
         if (frame <= 100) {
-          const invF = 100 - frame
           const p = initialCameraPosition
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20
 

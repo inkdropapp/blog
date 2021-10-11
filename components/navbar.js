@@ -7,8 +7,6 @@ import {
   Stack,
   Heading,
   Flex,
-  Text,
-  Button,
   Menu,
   MenuItem,
   MenuList,

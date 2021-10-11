@@ -1,7 +1,6 @@
-import { useState, useCallback } from 'react'
 import Head from 'next/head'
 import NavBar from '../navbar'
-import { Box, Text, Image, Container, SimpleGrid } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import VoxelDog from '../voxel-dog'
 import NoSsr from '../no-ssr'
 import Footer from '../footer'

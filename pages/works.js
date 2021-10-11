@@ -1,5 +1,3 @@
-import NextLink from 'next/link'
-import Image from 'next/image'
 import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
