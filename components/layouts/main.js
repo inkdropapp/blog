@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react";
 import Head from "next/head";
 import NavBar from "../navbar";
-import Header from "../header";
 import { Box, Text, Image, Container, SimpleGrid } from "@chakra-ui/react";
 import VoxelDog from "../voxel-dog";
 import NoSsr from "../no-ssr";
