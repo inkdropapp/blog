@@ -24,6 +24,17 @@ const VoxelDog = () => {
   const [scene] = useState(new THREE.Scene());
   const [controls, setControls] = useState();
 
+  const handleWindowResize = useCallback(() => {
+    const { current: container } = refContainer;
+    if (container && renderer) {
+      const scW = container.clientWidth;
+      const scH = container.clientHeight;
+      const aspectRatio = scW / scH;
+
+      renderer.setSize(scW, scH);
+    }
+  }, [renderer]);
+
   useEffect(() => {
     const { current: container } = refContainer;
     if (container && !renderer) {
@@ -43,7 +54,7 @@ const VoxelDog = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scW * 0.005 + 4.8;
+      const scale = scH * 0.005 + 4.8;
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -103,6 +114,13 @@ const VoxelDog = () => {
       };
     }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize, false);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize, false);
+    };
+  }, [renderer]);
 
   return (
     <Box
