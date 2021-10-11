@@ -19,13 +19,15 @@ import Paragraph from "../components/paragraph";
 import { BioSection, BioYear } from "../components/bio";
 import Layout from "../components/layouts/article";
 import Section from "../components/section";
-import Contents from "../components/contents";
+import { GridItem } from "../components/grid-item";
 import {
   IoLogoTwitter,
   IoLogoInstagram,
   IoLogoYoutube,
   IoLogoGithub
 } from "react-icons/io5";
+import thumbYouTube from "../public/images/links/youtube.png";
+import thumbInkdrop from "../public/images/works/inkdrop_eyecatch.png";
 
 const Home = () => (
   <Layout>
@@ -127,7 +129,7 @@ const Home = () => (
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          Links
+          On the web
         </Heading>
         <List>
           <ListItem>
@@ -174,25 +176,24 @@ const Home = () => (
               </Button>
             </Link>
           </ListItem>
-          <ListItem>
-            <Link href="https://www.youtube.com/devaslife" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoYoutube} />}
-              >
-                devaslife
-              </Button>
-            </Link>
-          </ListItem>
         </List>
-      </Section>
 
-      <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          Contents
-        </Heading>
-        <Contents />
+        <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <GridItem
+            href="https://www.youtube.com/devaslife"
+            title="Dev as Life"
+            thumbnail={thumbYouTube}
+          >
+            My YouTube channel
+          </GridItem>
+          <GridItem
+            href="https://www.inkdrop.app/"
+            title="Inkdrop"
+            thumbnail={thumbInkdrop}
+          >
+            A Markdown note-taking app
+          </GridItem>
+        </SimpleGrid>
       </Section>
     </Container>
   </Layout>

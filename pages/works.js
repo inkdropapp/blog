@@ -1,19 +1,9 @@
 import NextLink from "next/link";
 import Image from "next/image";
-import {
-  Container,
-  Heading,
-  Box,
-  Text,
-  LinkBox,
-  LinkOverlay,
-  SimpleGrid,
-  Divider,
-  useColorModeValue
-} from "@chakra-ui/react";
+import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
 import Layout from "../components/layouts/article";
 import Section from "../components/section";
-import { Global } from "@emotion/react";
+import { WorkGridItem } from "../components/grid-item";
 
 import thumbInkdrop from "../public/images/works/inkdrop_eyecatch.png";
 import thumbWalknote from "../public/images/works/walknote_eyecatch.png";
@@ -25,27 +15,6 @@ import thumbPichu2 from "../public/images/works/pichu2_eyecatch.png";
 import thumbFreeDBTagger from "../public/images/works/freedbtagger_eyecatch.png";
 import thumbAmembo from "../public/images/works/amembo_eyecatch.png";
 
-const WorkItem = ({ children, id, title, thumbnail }) => (
-  <Box w="100%" textAlign="center">
-    <NextLink href={`/works/${id}`}>
-      <LinkBox cursor="pointer">
-        <Image
-          src={thumbnail}
-          alt={title}
-          className="work-thumbnail"
-          placeholder="blur"
-        />
-        <LinkOverlay href={`/works/${id}`}>
-          <Text mt={2} fontSize={20}>
-            {title}
-          </Text>
-        </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
-      </LinkBox>
-    </NextLink>
-  </Box>
-);
-
 const Works = () => (
   <Layout title="Works">
     <Container>
@@ -55,32 +24,36 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <WorkItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
+          <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
             A Markdown note-taking app with 100+ plugins, cross-platform and
             encrypted data sync support
-          </WorkItem>
+          </WorkGridItem>
         </Section>
         <Section>
-          <WorkItem id="walknote" title="walknote" thumbnail={thumbWalknote}>
+          <WorkGridItem
+            id="walknote"
+            title="walknote"
+            thumbnail={thumbWalknote}
+          >
             Music recommendation app for iOS
-          </WorkItem>
+          </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
-          <WorkItem
+          <WorkGridItem
             id="fourpainters"
             title="The four painters"
             thumbnail={thumbFourPainters}
           >
             A video work generated with deep learning, imitating famous four
             painters like Van Gogh
-          </WorkItem>
+          </WorkGridItem>
         </Section>
         <Section delay={0.1}>
-          <WorkItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
+          <WorkGridItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
             An app that suggests ramen(noodle) shops based on a given photo of
             the ramen you want to eat
-          </WorkItem>
+          </WorkGridItem>
         </Section>
       </SimpleGrid>
 
@@ -94,18 +67,18 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.3}>
-          <WorkItem
+          <WorkGridItem
             id="modetokyo"
             thumbnail={thumbModeTokyo}
             title="mode.tokyo"
           >
             The mode magazine for understanding to personally enjoy Japan
-          </WorkItem>
+          </WorkGridItem>
         </Section>
         <Section delay={0.3}>
-          <WorkItem id="styly" thumbnail={thumbStyly} title="Styly">
+          <WorkGridItem id="styly" thumbnail={thumbStyly} title="Styly">
             A VR Creative tools for fashion brands
-          </WorkItem>
+          </WorkGridItem>
         </Section>
       </SimpleGrid>
 
@@ -119,35 +92,27 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.5}>
-          <WorkItem id="pichu2" thumbnail={thumbPichu2} title="Pichu*Pichu">
+          <WorkGridItem id="pichu2" thumbnail={thumbPichu2} title="Pichu*Pichu">
             Twitter client app for iPhone Safari
-          </WorkItem>
+          </WorkGridItem>
         </Section>
         <Section delay={0.5}>
-          <WorkItem
+          <WorkGridItem
             id="freedbtagger"
             thumbnail={thumbFreeDBTagger}
             title="freeDBTagger"
           >
             Automatic audio file tagging tool using FreeDB for Windows
-          </WorkItem>
+          </WorkGridItem>
         </Section>
         <Section delay={0.6}>
-          <WorkItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
+          <WorkGridItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
             P2P private file sharing tool with MSN Messenger integration for
             Windows
-          </WorkItem>
+          </WorkGridItem>
         </Section>
       </SimpleGrid>
     </Container>
-
-    <Global
-      styles={`
-      .work-thumbnail {
-        border-radius: 12px;
-      }
-    `}
-    />
   </Layout>
 );
 
