@@ -9,7 +9,7 @@ import { GridItem } from "../components/grid-item";
 import thumbFishWorkflow from "../public/images/contents/youtube-fish-workflow.jpg";
 import thumbMyDeskSetup from "../public/images/contents/youtube-my-desk-setup.jpg";
 import thumb500PaidUsers from "../public/images/contents/blog-500-paid-users.jpg";
-import thumbIllustrations from "../public/images/contents/illustrations.jpg";
+import thumbFinancialGoal from "../public/images/contents/blog-financial-goal.png";
 import thumbHowToPriceYourself from "../public/images/contents/blog-how-to-price-yourself.jpg";
 import thumb50xFaster from "../public/images/contents/youtube-50x-faster.jpg";
 
@@ -43,9 +43,9 @@ const Links = () => (
             href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820"
           />
           <GridItem
-            title="Illustrations"
-            thumbnail={thumbIllustrations}
-            href="https://illust.odoruinu.net/"
+            title="I stopped setting a financial goal for my SaaS"
+            thumbnail={thumbFinancialGoal}
+            href="https://blog.inkdrop.app/i-stopped-setting-a-financial-goal-for-my-saas-a92c3db65506"
           />
         </SimpleGrid>
       </Section>

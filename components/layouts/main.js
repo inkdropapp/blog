@@ -5,6 +5,7 @@ import Header from "../header";
 import { Box, Text, Image, Container, SimpleGrid } from "@chakra-ui/react";
 import VoxelDog from "../voxel-dog";
 import NoSsr from "../no-ssr";
+import Footer from "../footer";
 
 const Main = ({ children, router }) => {
   return (
@@ -22,6 +23,8 @@ const Main = ({ children, router }) => {
         </NoSsr>
 
         {children}
+
+        <Footer />
       </Container>
     </Box>
   );

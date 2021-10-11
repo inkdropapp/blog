@@ -12,7 +12,7 @@ const Work = () => (
       </Title>
       <P>
         A Markdown note-taking app with 100+ plugins, cross-platform and
-        encrypted data sync support.
+        encrypted data sync support. The life-time revenue is more than $200k.
       </P>
       <List ml={4} my={4}>
         <ListItem>

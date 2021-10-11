@@ -24,7 +24,8 @@ import {
   IoLogoTwitter,
   IoLogoInstagram,
   IoLogoYoutube,
-  IoLogoGithub
+  IoLogoGithub,
+  IoLogoDiscord
 } from "react-icons/io5";
 import thumbYouTube from "../public/images/links/youtube.png";
 import thumbInkdrop from "../public/images/works/inkdrop_eyecatch.png";
@@ -122,8 +123,15 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Music, Drawing, Playing Drums, Photography, Leica, Machine
-          Learning
+          Art, Music,{" "}
+          <Link href="https://illust.odoruinu.net/" target="_blank">
+            Drawing
+          </Link>
+          , Playing Drums,{" "}
+          <Link href="https://500px.com/p/craftzdog" target="_blank">
+            Photography
+          </Link>
+          , Leica, Machine Learning
         </Paragraph>
       </Section>
 
@@ -176,6 +184,17 @@ const Home = () => (
               </Button>
             </Link>
           </ListItem>
+          <ListItem>
+            <Link href="https://discord.gg/QfsG5Kj" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoDiscord} />}
+              >
+                Discord
+              </Button>
+            </Link>
+          </ListItem>
         </List>
 
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
@@ -194,6 +213,14 @@ const Home = () => (
             A Markdown note-taking app
           </GridItem>
         </SimpleGrid>
+
+        <Box align="center" my={4}>
+          <NextLink href="/posts">
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              Popular posts
+            </Button>
+          </NextLink>
+        </Box>
       </Section>
     </Container>
   </Layout>
