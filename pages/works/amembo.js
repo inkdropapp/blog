@@ -24,7 +24,7 @@ const Work = () => (
         amembo <Badge>2005-2008</Badge>
       </Title>
       <Center my={6}>
-        <Image src="/images/works/amembo_icon.png" />
+        <Image src="/images/works/amembo_icon.png" alt="icon" />
       </Center>
       <P>
         P2P private file sharing tool with MSN Messenger integration for Windows

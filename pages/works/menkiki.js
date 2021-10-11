@@ -24,13 +24,14 @@ const Work = () => (
       </Title>
       <P>
         Menkiki suggests ramen(Chinese noodle) shops based on a photo of ramen
-        you want to eat. Why? Because you don't need to input Japanese keywords
-        to find restaurants, but just specify a ramen photo then it will suggest
-        great shops for you. It supports 900+ famous ramen shops in Japan!
+        you want to eat. Why? Because you don&apos;t need to input Japanese
+        keywords to find restaurants, but just specify a ramen photo then it
+        will suggest great shops for you. It supports 900+ famous ramen shops in
+        Japan!
       </P>
       <P>
         So, you can check a shop info as soon as you found a promising ramen
-        shop in a food magazine. Let's go out and have a delicious ramen!
+        shop in a food magazine. Let&apos;s go out and have a delicious ramen!
       </P>
       <UnorderedList my={4}>
         <ListItem>Ramen shop recommendation based on photo</ListItem>

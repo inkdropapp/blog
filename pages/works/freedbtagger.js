@@ -24,13 +24,13 @@ const Work = () => (
         freeDBTagger <Badge>2004-2009</Badge>
       </Title>
       <Center my={6}>
-        <Image src="/images/works/freedbtagger_icon.gif" />
+        <Image src="/images/works/freedbtagger_icon.gif" alt="icon" />
       </Center>
       <P>Automatic audio file tagging tool using FreeDB for Windows</P>
       <P>楽曲長の組み合わせでアルバムを特定して楽曲情報を自動入力</P>
       <P>
         アルバム内楽曲の再生時間の組み合わせで、CDDBサーバー“freeDB.org”を検索してアルバムを特定、楽曲情報を取得できるID3タグ一括編集ソフト。本ソフトを起動し、読み込んだアルバム1枚分の音楽ファイルの曲順を整えて［アルバム検索］を実行すれば、あとは本ソフトが、オープンソースで運営されているCDDBサーバー“freeDB.org”で再生時間の組み合わせからアルバムを特定して、アルバム名や曲名、アーチスト名などの情報を取得してくれる。MP3/WMA/Ogg
-        Vorbis/AAC/Monkey's Audio/MPEGplus/FLAC/Twin
+        Vorbis/AAC/Monkey&apos;s Audio/MPEGplus/FLAC/Twin
         VQ/WavPackファイルの楽曲情報を取得・編集できるほか、CDAファイルの楽曲情報を表示可能。MP3ファイルのタグに登録する場合のタグ形式は、ID3v1・ID3v2に対応しており、設定画面で選択可能。タグ項目内の文字数が30文字以上の場合のみ、ID3v2に登録する機能も備えている。
       </P>
 
