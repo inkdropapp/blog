@@ -1,9 +1,9 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "../components/layouts/main";
-import Fonts from "../components/fonts";
-import theme from "../lib/theme";
-import { AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import { ChakraProvider } from '@chakra-ui/react'
+import Layout from '../components/layouts/main'
+import Fonts from '../components/fonts'
+import theme from '../lib/theme'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 
 function Website({ Component, pageProps, router }) {
   return (
@@ -15,7 +15,7 @@ function Website({ Component, pageProps, router }) {
         </AnimatePresence>
       </Layout>
     </ChakraProvider>
-  );
+  )
 }
 
-export default Website;
+export default Website

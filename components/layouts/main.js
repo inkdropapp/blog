@@ -1,10 +1,10 @@
-import { useState, useCallback } from "react";
-import Head from "next/head";
-import NavBar from "../navbar";
-import { Box, Text, Image, Container, SimpleGrid } from "@chakra-ui/react";
-import VoxelDog from "../voxel-dog";
-import NoSsr from "../no-ssr";
-import Footer from "../footer";
+import { useState, useCallback } from 'react'
+import Head from 'next/head'
+import NavBar from '../navbar'
+import { Box, Text, Image, Container, SimpleGrid } from '@chakra-ui/react'
+import VoxelDog from '../voxel-dog'
+import NoSsr from '../no-ssr'
+import Footer from '../footer'
 
 const Main = ({ children, router }) => {
   return (
@@ -26,7 +26,7 @@ const Main = ({ children, router }) => {
         <Footer />
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main

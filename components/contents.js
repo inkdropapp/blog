@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import {
   Link,
   LinkBox,
@@ -6,9 +6,9 @@ import {
   Box,
   Text,
   SimpleGrid
-} from "@chakra-ui/react";
-import { Global } from "@emotion/react";
+} from '@chakra-ui/react'
+import { Global } from '@emotion/react'
 
-const Contents = () => <SimpleGrid columns={[1, 1, 2]} gap={6}></SimpleGrid>;
+const Contents = () => <SimpleGrid columns={[1, 1, 2]} gap={6}></SimpleGrid>
 
-export default Contents;
+export default Contents

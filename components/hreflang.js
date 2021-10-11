@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head'
 
 export default function Hreflang({ links, defaultUrl }) {
   return (
@@ -9,5 +9,5 @@ export default function Hreflang({ links, defaultUrl }) {
       <link rel="alternate" href={defaultUrl} hrefLang="x-default" />
       <link rel="alternate" href={defaultUrl} hrefLang="en" />
     </Head>
-  );
+  )
 }

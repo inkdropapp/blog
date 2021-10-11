@@ -1,17 +1,17 @@
-import NextLink from "next/link";
-import Image from "next/image";
-import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
-import Layout from "../components/layouts/article";
-import Section from "../components/section";
-import Contents from "../components/contents";
-import { GridItem } from "../components/grid-item";
+import NextLink from 'next/link'
+import Image from 'next/image'
+import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import Layout from '../components/layouts/article'
+import Section from '../components/section'
+import Contents from '../components/contents'
+import { GridItem } from '../components/grid-item'
 
-import thumbFishWorkflow from "../public/images/contents/youtube-fish-workflow.jpg";
-import thumbMyDeskSetup from "../public/images/contents/youtube-my-desk-setup.jpg";
-import thumb500PaidUsers from "../public/images/contents/blog-500-paid-users.jpg";
-import thumbFinancialGoal from "../public/images/contents/blog-financial-goal.png";
-import thumbHowToPriceYourself from "../public/images/contents/blog-how-to-price-yourself.jpg";
-import thumb50xFaster from "../public/images/contents/youtube-50x-faster.jpg";
+import thumbFishWorkflow from '../public/images/contents/youtube-fish-workflow.jpg'
+import thumbMyDeskSetup from '../public/images/contents/youtube-my-desk-setup.jpg'
+import thumb500PaidUsers from '../public/images/contents/blog-500-paid-users.jpg'
+import thumbFinancialGoal from '../public/images/contents/blog-financial-goal.png'
+import thumbHowToPriceYourself from '../public/images/contents/blog-how-to-price-yourself.jpg'
+import thumb50xFaster from '../public/images/contents/youtube-50x-faster.jpg'
 
 const Links = () => (
   <Layout title="Links">
@@ -66,6 +66,6 @@ const Links = () => (
       </Section>
     </Container>
   </Layout>
-);
+)
 
-export default Links;
+export default Links

@@ -11,11 +11,11 @@ import {
   Center,
   Image,
   AspectRatio
-} from "@chakra-ui/react";
-import Layout from "../../components/layouts/article";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
-import P from "../../components/paragraph";
+} from '@chakra-ui/react'
+import Layout from '../../components/layouts/article'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Title, WorkImage, Meta } from '../../components/work'
+import P from '../../components/paragraph'
 
 const Work = () => (
   <Layout title="amembo">
@@ -87,7 +87,7 @@ const Work = () => (
           <Link href="https://forest.watch.impress.co.jp/article/2006/01/18/amembo.html">
             <Badge mr={2}>窓の杜</Badge>
             「MSN
-            Messenger」と連係して特定ユーザーとP2Pフォルダ共有できる「Amembo」{" "}
+            Messenger」と連係して特定ユーザーとP2Pフォルダ共有できる「Amembo」{' '}
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -101,6 +101,6 @@ const Work = () => (
       <WorkImage src="/images/works/amembo_04.jpg" alt="amembo" />
     </Container>
   </Layout>
-);
+)
 
-export default Work;
+export default Work

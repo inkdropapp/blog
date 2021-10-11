@@ -11,11 +11,11 @@ import {
   Center,
   Image,
   AspectRatio
-} from "@chakra-ui/react";
-import Layout from "../../components/layouts/article";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
-import P from "../../components/paragraph";
+} from '@chakra-ui/react'
+import Layout from '../../components/layouts/article'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Title, WorkImage, Meta } from '../../components/work'
+import P from '../../components/paragraph'
 
 const Work = () => (
   <Layout title="pichu*pichu">
@@ -48,7 +48,7 @@ const Work = () => (
         <ListItem>
           <Link href="http://www.donpy.net/standard-entry/app-reiview/4303.html">
             <Badge mr={2}>覚醒する @CDiP</Badge>
-            Webアプリ版twitterクライアントの「pichu*pichu」が凄い。{" "}
+            Webアプリ版twitterクライアントの「pichu*pichu」が凄い。{' '}
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -56,7 +56,7 @@ const Work = () => (
         <ListItem>
           <Link href="http://labs.laurahouse.net/articles/iphone/1115.html">
             <Badge mr={2}>LauraHouse Labs</Badge>
-            知っておきたいWebアプリ版Twitterクライアント活用法{" "}
+            知っておきたいWebアプリ版Twitterクライアント活用法{' '}
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -66,6 +66,6 @@ const Work = () => (
       <WorkImage src="/images/works/pichu2_01.png" alt="Pichu*Pichu" />
     </Container>
   </Layout>
-);
+)
 
-export default Work;
+export default Work

@@ -11,11 +11,11 @@ import {
   Center,
   Image,
   AspectRatio
-} from "@chakra-ui/react";
-import Layout from "../../components/layouts/article";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
-import P from "../../components/paragraph";
+} from '@chakra-ui/react'
+import Layout from '../../components/layouts/article'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Title, WorkImage, Meta } from '../../components/work'
+import P from '../../components/paragraph'
 
 const Work = () => (
   <Layout title="STYLY">
@@ -62,6 +62,6 @@ const Work = () => (
       <WorkImage src="/images/works/styly_03.png" alt="STYLY" />
     </Container>
   </Layout>
-);
+)
 
-export default Work;
+export default Work

@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import NextLink from 'next/link'
 import {
   Link,
   Container,
@@ -13,22 +13,22 @@ import {
   Icon,
   IconButton,
   useColorModeValue
-} from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
-import Paragraph from "../components/paragraph";
-import { BioSection, BioYear } from "../components/bio";
-import Layout from "../components/layouts/article";
-import Section from "../components/section";
-import { GridItem } from "../components/grid-item";
+} from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import Paragraph from '../components/paragraph'
+import { BioSection, BioYear } from '../components/bio'
+import Layout from '../components/layouts/article'
+import Section from '../components/section'
+import { GridItem } from '../components/grid-item'
 import {
   IoLogoTwitter,
   IoLogoInstagram,
   IoLogoYoutube,
   IoLogoGithub,
   IoLogoDiscord
-} from "react-icons/io5";
-import thumbYouTube from "../public/images/links/youtube.png";
-import thumbInkdrop from "../public/images/works/inkdrop_eyecatch.png";
+} from 'react-icons/io5'
+import thumbYouTube from '../public/images/links/youtube.png'
+import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 
 const Home = () => (
   <Layout>
@@ -38,12 +38,12 @@ const Home = () => (
         mb={6}
         p={3}
         textAlign="center"
-        bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
       >
         Hello, I'm a full-stack developer based in Japan!
       </Box>
 
-      <Box display={{ md: "flex" }}>
+      <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
             Takuya Matsuyama
@@ -79,7 +79,7 @@ const Home = () => (
           for all things launching products, from planning and designing all the
           way to solving real-life problems with code. When not online, he loves
           hanging out with his camera. Currently, he is living off of his own
-          product called{" "}
+          product called{' '}
           <NextLink href="/works/inkdrop">
             <Link>Inkdrop</Link>
           </NextLink>
@@ -123,11 +123,11 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Music,{" "}
+          Art, Music,{' '}
           <Link href="https://illust.odoruinu.net/" target="_blank">
             Drawing
           </Link>
-          , Playing Drums,{" "}
+          , Playing Drums,{' '}
           <Link href="https://500px.com/p/craftzdog" target="_blank">
             Photography
           </Link>
@@ -224,6 +224,6 @@ const Home = () => (
       </Section>
     </Container>
   </Layout>
-);
+)
 
-export default Home;
+export default Home

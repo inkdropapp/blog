@@ -10,11 +10,11 @@ import {
   Heading,
   Center,
   Image
-} from "@chakra-ui/react";
-import Layout from "../../components/layouts/article";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
-import P from "../../components/paragraph";
+} from '@chakra-ui/react'
+import Layout from '../../components/layouts/article'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Title, WorkImage, Meta } from '../../components/work'
+import P from '../../components/paragraph'
 
 const Work = () => (
   <Layout title="Menkiki (麺利き)">
@@ -56,7 +56,7 @@ const Work = () => (
         <ListItem>
           <Meta>Presentation</Meta>
           <Link href="https://speakerdeck.com/craftzdog/caffedeoshou-qing-ben-ge-deipuraninguiosapuri">
-            Caffeでお手軽本格ディープラーニングアプリ @potatotips{" "}
+            Caffeでお手軽本格ディープラーニングアプリ @potatotips{' '}
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -90,6 +90,6 @@ const Work = () => (
       </SimpleGrid>
     </Container>
   </Layout>
-);
+)
 
-export default Work;
+export default Work

@@ -8,11 +8,11 @@ import {
   UnorderedList,
   Heading,
   Center
-} from "@chakra-ui/react";
-import Layout from "../../components/layouts/article";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
-import P from "../../components/paragraph";
+} from '@chakra-ui/react'
+import Layout from '../../components/layouts/article'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Title, WorkImage, Meta } from '../../components/work'
+import P from '../../components/paragraph'
 
 const Work = () => (
   <Layout title="walknote">
@@ -37,7 +37,7 @@ const Work = () => (
         <ListItem>
           <Meta>Blogpost</Meta>
           <Link href="https://archive.craftz.dog/blog.odoruinu.net/2016/09/06/farewell-from-walknote/">
-            音楽発掘アプリwalknoteクローズのお知らせ{" "}
+            音楽発掘アプリwalknoteクローズのお知らせ{' '}
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -95,6 +95,6 @@ const Work = () => (
       <WorkImage src="/images/works/walknote_05.png" alt="walknote" />
     </Container>
   </Layout>
-);
+)
 
-export default Work;
+export default Work
